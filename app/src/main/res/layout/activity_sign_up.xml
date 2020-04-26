@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainColor"
+    android:orientation="vertical"
+    tools:context=".SignUpActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="25dp">
+
+        <com.beardedhen.androidbootstrap.BootstrapEditText
+            android:id="@+id/signUp_id"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="아이디"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:textColorHint="@color/bootstrap_gray_light"
+            app:bootstrapBrand="primary"
+            app:bootstrapSize="md"
+            app:roundedCorners="true" />
+
+        <com.beardedhen.androidbootstrap.BootstrapEditText
+            android:id="@+id/signUp_pw"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="15dp"
+            android:hint="비밀번호"
+            android:inputType="textPassword"
+            android:padding="20dp"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:textColorHint="@color/bootstrap_gray_light"
+            app:bootstrapBrand="primary"
+            app:bootstrapSize="md"
+            app:roundedCorners="true" />
+
+        <com.beardedhen.androidbootstrap.BootstrapEditText
+            android:id="@+id/signUp_studentId"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="15dp"
+            android:hint="학번"
+            android:padding="20dp"
+            android:inputType="number"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:textColorHint="@color/bootstrap_gray_light"
+            app:bootstrapBrand="primary"
+            app:bootstrapSize="md"
+            app:roundedCorners="true" />
+
+        <com.beardedhen.androidbootstrap.BootstrapEditText
+            android:id="@+id/signUp_name"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="15dp"
+            android:inputType="textPersonName"
+            android:hint="이름"
+            android:padding="20dp"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:textColorHint="@color/bootstrap_gray_light"
+            app:bootstrapBrand="primary"
+            app:bootstrapSize="md"
+            app:roundedCorners="true" />
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/signUp_signBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:onClick="onClick"
+            android:text="회원가입"
+            app:bootstrapBrand="primary"
+            app:bootstrapSize="lg"
+            app:buttonMode="regular"
+            app:roundedCorners="true"
+            app:showOutline="false" />
+    </LinearLayout>
+</LinearLayout>
