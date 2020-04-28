@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="titleColor">#323231</color>
+
     <color name="mainColor">#fefefe</color>
     <color name="mainColorDark">#f9f9f9</color>
 

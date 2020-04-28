@@ -34,6 +34,7 @@ dependencies {
     // 안드로이드 부트스트랩
     implementation 'com.beardedhen:androidbootstrap:2.3.2'
 
+    // 슬라이딩 액티비티
     implementation 'com.klinkerapps:sliding-activity:1.5.2'
 
 }

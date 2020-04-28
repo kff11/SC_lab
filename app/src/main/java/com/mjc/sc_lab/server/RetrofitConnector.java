@@ -20,11 +20,3 @@ public class RetrofitConnector {
     }
 
 }
-
-/*private Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl(URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build();
-
-    public ServiceApi server = retrofit.create(ServiceApi.class);
-}*/
