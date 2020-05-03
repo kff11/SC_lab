@@ -6,13 +6,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.mjc.sc_lab.pages.Lab319Fragment;
+import com.mjc.sc_lab.pages.Lab320Fragment;
 
 import java.util.HashMap;
 
@@ -34,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.main_drawer_layout);
 
         layoutInit();
-        buttonInit();
+        bottomNavInit();
 
     }
 
@@ -49,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.icon_menu);
 
         // 네비게이션 드로어
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.navgation_view);
 
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.app_name, R.string.app_name);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
@@ -77,27 +82,37 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void buttonInit() {
-        map = new HashMap<String, View>();
-        for (int i = 1; i <= 36; i++) {
-            int btnId = getResources().getIdentifier("lab_" + i, "id", getPackageName());
-            String btnVar = "btnVar" + Integer.toString(i);
-            map.put(btnVar, findViewById(btnId));
-            map.get(btnVar).setBackgroundResource(R.color.seatNotUse);
-        }
-    }
+    private void bottomNavInit() {
+        final FragmentManager fragmentManager = getSupportFragmentManager();
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
 
+        final Lab319Fragment lab319Fragment = new Lab319Fragment();
+        final Lab320Fragment lab320Fragment = new Lab320Fragment();
 
-    public void onClick(View view) {
-        for (int i = 1; i <= 36; i++) {
-            int btnId = getResources().getIdentifier("lab_" + i, "id", getPackageName());
-            String btnVar = "btnVar" + Integer.toString(i);
+        // 첫 화면 지정
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.main_framelayout, lab319Fragment).commitAllowingStateLoss();
 
-            if (view.getId() == btnId) {
-                map.get(btnVar).setBackgroundResource(R.color.myeongjiBlue);
-                break;
+        // 하단 바 이벤트
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                switch (item.getItemId()) {
+                    case R.id.navigation_319: {
+                        transaction.replace(R.id.main_framelayout, lab319Fragment).commitAllowingStateLoss();
+                        break;
+                    }
+                    case R.id.navigation_320: {
+                        transaction.replace(R.id.main_framelayout, lab320Fragment).commitAllowingStateLoss();
+                        break;
+                    }
+                }
+                return true;
             }
-        }
+        });
+
     }
+
 }
 
