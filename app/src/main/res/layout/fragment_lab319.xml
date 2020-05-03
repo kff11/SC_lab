@@ -31,9 +31,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="319호" />
+                android:text="공학관 319호" />
 
             <TextView
+                android:id="@+id/lab319_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

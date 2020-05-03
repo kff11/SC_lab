@@ -24,7 +24,7 @@ import retrofit2.Retrofit;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText editText_id, editText_pw;
-    private Button loginbtn, signUpBtn;
+    private SharedPreference sharedPreference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +32,14 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         TypefaceProvider.registerDefaultIconSets();
 
+        sharedPreference = new SharedPreference(this);
+
         editText_id = findViewById(R.id.login_id);
         editText_pw = findViewById(R.id.login_pw);
 
     }
 
-    private void searchUserData(String id, String pw) {
+    private void searchUserData(final String id, String pw) {
         LoginReq data = new LoginReq(id, pw);
         Retrofit retrofit = RetrofitConnector.createRetrofit(getApplicationContext());
 
@@ -48,6 +50,10 @@ public class LoginActivity extends AppCompatActivity {
                 LoginRes result = response.body();
 
                 if (result.isSuc()) {
+                    sharedPreference.setSharedString("userId", id);
+                    sharedPreference.setSharedString("studentId", result.getStudentId());
+                    sharedPreference.setSharedString("name", result.getName());
+
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
                     finish();

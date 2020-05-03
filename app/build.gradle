@@ -39,4 +39,7 @@ dependencies {
     // 슬라이딩 액티비티
     implementation 'com.klinkerapps:sliding-activity:1.5.2'
 
+    // 다이얼로그
+    implementation 'com.github.thomper:sweet-alert-dialog:v1.4.0'
+
 }

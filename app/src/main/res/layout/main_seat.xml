@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClick"
+            android:background="@color/seatNotUse"
             android:text="1" />
 
         <Button
@@ -31,6 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClick"
+            android:background="@color/seatNotUse"
             android:text="2" />
 
         <View
@@ -44,6 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClick"
+            android:background="@color/seatNotUse"
             android:text="3" />
 
         <Button
@@ -52,6 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClick"
+            android:background="@color/seatNotUse"
             android:text="4" />
 
         <View
@@ -64,6 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/seatNotUse"
             android:onClick="onClick"
             android:text="5" />
 
@@ -73,6 +78,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClick"
+            android:background="@color/seatNotUse"
             android:text="6" />
 
     </LinearLayout>
@@ -88,6 +94,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/seatNotUse"
             android:onClick="onClick"
             android:text="7" />
 
@@ -96,6 +103,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/seatNotUse"
             android:onClick="onClick"
             android:text="8" />
 
@@ -110,6 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClick"
+            android:background="@color/seatNotUse"
             android:text="9" />
 
         <Button
@@ -117,6 +126,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/seatNotUse"
             android:onClick="onClick"
             android:text="10" />
 
@@ -130,6 +140,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/seatNotUse"
             android:onClick="onClick"
             android:text="11" />
 
@@ -139,6 +150,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClick"
+            android:background="@color/seatNotUse"
             android:text="12" />
 
     </LinearLayout>
@@ -154,6 +166,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/seatNotUse"
             android:onClick="onClick"
             android:text="13" />
 
@@ -163,6 +176,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClick"
+            android:background="@color/seatNotUse"
             android:text="14" />
 
         <View
@@ -176,6 +190,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClick"
+            android:background="@color/seatNotUse"
             android:text="15" />
 
         <Button
@@ -183,6 +198,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/seatNotUse"
             android:onClick="onClick"
             android:text="16" />
 
@@ -197,6 +213,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClick"
+            android:background="@color/seatNotUse"
             android:text="17" />
 
         <Button
@@ -204,6 +221,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/seatNotUse"
             android:onClick="onClick"
             android:text="18" />
 
@@ -221,6 +239,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClick"
+            android:background="@color/seatNotUse"
             android:text="19" />
 
         <Button
@@ -228,6 +247,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/seatNotUse"
             android:onClick="onClick"
             android:text="20" />
 
@@ -242,6 +262,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClick"
+            android:background="@color/seatNotUse"
             android:text="21" />
 
         <Button
@@ -249,6 +270,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/seatNotUse"
             android:onClick="onClick"
             android:text="22" />
 
@@ -262,6 +284,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/seatNotUse"
             android:onClick="onClick"
             android:text="23" />
 
@@ -270,6 +293,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/seatNotUse"
             android:onClick="onClick"
             android:text="24" />
 
@@ -286,6 +310,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/seatNotUse"
             android:onClick="onClick"
             android:text="25" />
 
@@ -294,6 +319,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/seatNotUse"
             android:onClick="onClick"
             android:text="26" />
 
@@ -308,6 +334,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClick"
+            android:background="@color/seatNotUse"
             android:text="27" />
 
         <Button
@@ -316,6 +343,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClick"
+            android:background="@color/seatNotUse"
             android:text="28" />
 
         <View
@@ -328,6 +356,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/seatNotUse"
             android:onClick="onClick"
             android:text="29" />
 
@@ -336,6 +365,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/seatNotUse"
             android:onClick="onClick"
             android:text="30" />
 
@@ -352,6 +382,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClick"
+            android:background="@color/seatNotUse"
             android:text="31" />
 
         <Button
@@ -360,6 +391,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClick"
+            android:background="@color/seatNotUse"
             android:text="32" />
 
         <View
@@ -373,6 +405,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClick"
+            android:background="@color/seatNotUse"
             android:text="33" />
 
         <Button
@@ -381,6 +414,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClick"
+            android:background="@color/seatNotUse"
             android:text="34" />
 
         <View
@@ -393,6 +427,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/seatNotUse"
             android:onClick="onClick"
             android:text="35" />
 
@@ -401,6 +436,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/seatNotUse"
             android:onClick="onClick"
             android:text="36" />
     </LinearLayout>

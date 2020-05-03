@@ -9,8 +9,8 @@ public class LoginReq {
     @SerializedName("password")
     private String password;
 
-    public LoginReq(String id, String userPwd) {
+    public LoginReq(String id, String password) {
         this.id = id;
-        this.password = userPwd;
+        this.password = password;
     }
 }
