@@ -50,6 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (result.isSuc()) {
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
+                    finish();
                 } else {
                     Toast.makeText(getApplicationContext(), "아이디 혹은 비밀번호를 확인해 주세요.", Toast.LENGTH_LONG).show();
                 }

@@ -10,13 +10,21 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
 
+    // Button 변수들이 들어갈 배열
+    private HashMap<String, View> map;
+
+    // 레이아웃
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
+
     private Intent intent;
 
     @Override
@@ -25,24 +33,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         drawerLayout = findViewById(R.id.main_drawer_layout);
 
-        setToolbar();
-        setDrawerLayout();
-
-
+        layoutInit();
+        buttonInit();
 
     }
-    private void setToolbar(){
+
+    private void layoutInit() {
+
+        // 툴바
         toolbar = findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.icon_menu);
-    }
 
-    private void setDrawerLayout(){
         // 네비게이션 드로어
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
 
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.app_name, R.string.app_name);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
@@ -67,6 +74,30 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+    }
+
+    private void buttonInit() {
+        map = new HashMap<String, View>();
+        for (int i = 1; i <= 36; i++) {
+            int btnId = getResources().getIdentifier("lab_" + i, "id", getPackageName());
+            String btnVar = "btnVar" + Integer.toString(i);
+            map.put(btnVar, findViewById(btnId));
+            map.get(btnVar).setBackgroundResource(R.color.seatNotUse);
+        }
+    }
+
+
+    public void onClick(View view) {
+        for (int i = 1; i <= 36; i++) {
+            int btnId = getResources().getIdentifier("lab_" + i, "id", getPackageName());
+            String btnVar = "btnVar" + Integer.toString(i);
+
+            if (view.getId() == btnId) {
+                map.get(btnVar).setBackgroundResource(R.color.myeongjiBlue);
+                break;
+            }
+        }
     }
 }
 
