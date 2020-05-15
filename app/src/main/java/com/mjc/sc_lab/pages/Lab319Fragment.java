@@ -2,9 +2,11 @@ package com.mjc.sc_lab.pages;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -94,7 +96,7 @@ public class Lab319Fragment extends Fragment implements View.OnClickListener {
         });
     }
 
-    private SweetAlertDialog reserveAlertDialog(Context context, final int number) {
+  /*  private SweetAlertDialog reserveAlertDialog(Context context, final int number) {
         return new SweetAlertDialog(getContext())
                 .setTitleText("자리 예약")
                 .setContentText(Integer.toString(number) + "번 자리를 예약하시겠습니까?")
@@ -114,7 +116,7 @@ public class Lab319Fragment extends Fragment implements View.OnClickListener {
                         sweetAlertDialog.cancel();
                     }
                 });
-    }
+    }*/
 
     private void setSeatReserve(final int number, String name, String studentId) {
         SeatReq req = new SeatReq("319", number, 1, name, studentId);
@@ -143,14 +145,29 @@ public class Lab319Fragment extends Fragment implements View.OnClickListener {
         });
     }
 
+    private void reserveAlertDialog(Context context, final int number) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("알림");
+        builder.setMessage(number + "번 자리를 예약 하시겠습니까?");
+        builder.setPositiveButton("예약", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                setSeatReserve(number, name, studentId);
+            }
+        });
+        builder.setNegativeButton("취소", null);
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
     @Override
     public void onClick(View v) {
         for (int i = 1; i <= 36; i++) {
             int btnId = getResources().getIdentifier("lab_" + i, "id", getContext().getPackageName());
             if (v.getId() == btnId) {
-                SweetAlertDialog reserveAlertDialog = reserveAlertDialog(getContext(), i);
-                reserveAlertDialog.show();
-
+                final int number = i;
+                reserveAlertDialog(getContext(), number);
                 break;
             }
         }

@@ -11,8 +11,10 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -31,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
 
     private Intent intent;
+
+    private long initTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.main_menu_posts:
                         intent = new Intent(getApplicationContext(), PostsActivity.class);
+                        break;
+                    case R.id.main_menu_memo:
+                        intent = new Intent(getApplicationContext(), MemoActivity.class);
                         break;
                     case R.id.main_menu_setting:
                         intent = new Intent(getApplicationContext(), SettingActivity.class);
@@ -112,6 +119,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (System.currentTimeMillis() - initTime > 3000) {
+                Toast.makeText(MainActivity.this, " 한 번 더 누르면 종료됩니다.", Toast.LENGTH_LONG).show();
+                initTime = System.currentTimeMillis();
+            } else {
+                finish();
+            }
+        }
+        return true;
     }
 
 }
